@@ -1,0 +1,434 @@
+:root {
+    --primary-color: #2c3e50; /* Dark blue-gray */
+    --secondary-color: #c55200; /* Vibrant orange */
+    --accent-color: #3498db; /* Bright blue */
+    --text-color: #34495e; /* Dark slate gray */
+    --background-color: #e6f2ff; /* Lighter sky blue */
+    --section-padding: 80px 0;
+
+    /* Light background colors for sections */
+    --bg-home: linear-gradient(135deg, #f0f8ff, #cce6ff); /* Lighter sky blue gradient */
+    --bg-about: #f9f9f9;
+    --bg-skills: #f0f8ff;
+    --bg-projects: #fef9f0;
+    --bg-education: #f9f9f9;
+    --bg-training: #f0f8ff;
+    --bg-certifications: #fef9f0;
+    --bg-why-choose-me: #f9f9f9;
+    --bg-contact: #f0f8ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: rgba(254, 254, 254, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+    z-index: 1000;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--secondary-color);
+}
+
+.menu-btn {
+    display: none;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: var(--bg-home);
+    padding: 0 2rem;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.images {
+    width: 250px;         /* adjust as needed */
+    height: 250px;        /* adjust as needed */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white; /* optional for border effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* optional for depth */
+  }  
+  
+/* Responsive adjustments for hero section */
+@media (max-width: 768px) {
+    .hero-flex {
+        flex-direction: column;
+    }
+    .hero-photo {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+/* Sections Common Styles */
+section {
+    padding: var(--section-padding);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Background colors for each section */
+#about {
+    background-color: var(--bg-about);
+}
+
+.centered-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#skills {
+    background-color: var(--bg-skills);
+}
+
+#projects {
+    background-color: var(--bg-projects);
+}
+
+#education {
+    background-color: var(--bg-education);
+}
+
+#training {
+    background-color: var(--bg-training);
+}
+
+#certifications {
+    background-color: var(--bg-certifications);
+}
+
+#why-choose-me {
+    background-color: var(--bg-why-choose-me);
+}
+
+#contact {
+    background-color: var(--bg-contact);
+}
+
+section.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+/* Center content for Training, Certifications, Why Choose Me */
+.training-content,
+.certifications,
+.why-choose-me {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.training-item ul,
+.certifications ul,
+.why-choose-me ul {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+/* Certifications section boxes horizontal layout */
+.certifications ul {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding-left: 0;
+}
+
+.certifications ul li {
+    background-color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    list-style: none;
+    min-width: 200px;
+    text-align: center;
+}
+small {
+    color: #555;
+    font-size: 0.9em;
+}
+/* Skills Section */
+.skills-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skill-category {
+    margin-bottom: 2rem;
+}
+
+.skill-category h3 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.skill-category h3 i {
+    margin-right: 0.5rem;
+    color: var(--secondary-color);
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.project-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(230, 126, 34, 0.3);
+}
+
+.project-tech {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.project-tech span {
+    background-color: #f9f4ef;
+    color: var(--secondary-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+/* Education Section */
+.education-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.education-item {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+}
+
+/* Contact Section */
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-form label {
+    font-weight: bold;
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: var(--accent-color);
+}
+
+.social-links {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .menu-btn .bar {
+        width: 25px;
+        height: 3px;
+        background-color: var(--primary-color);
+        margin: 5px 0;
+        transition: 0.3s;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        padding: 1rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero-flex {
+        flex-direction: column;
+    }
+
+    .hero-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+
+    /* Responsive adjustments for certifications boxes */
+    .certifications ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .certifications ul li {
+        min-width: auto;
+    }
+}
